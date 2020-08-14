@@ -4,6 +4,7 @@ import Info from "../components/Data";
 
 import RadioTeam from "../components/RadioTeam";
 import RadioColor from "../components/RadioColor";
+import RadioCity from "../components/RadioCity";
 
 export default function Home() {
   const [state, setState] = useState({
@@ -94,10 +95,19 @@ export default function Home() {
           aria-expanded="false"
           aria-controls="collapseThree"
         >
-          Link with href <i class="fas fa-arrow-circle-down ml-2"></i>
+          City <i class="fas fa-arrow-circle-down ml-2"></i>
         </a>
         <div class="collapse" id="collapseThree">
-          <div class="card card-body">asdasdsadasdsad</div>
+          <div class="card card-body">
+            {uniqueCity.map((key, i) => (
+              <RadioCity
+                key={i}
+                value={key}
+                checked={state.city === key}
+                onChange={handleChange}
+              />
+            ))}
+          </div>
         </div>
         <hr></hr>
         <a
