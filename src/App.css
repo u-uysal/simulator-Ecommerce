@@ -7,3 +7,8 @@
   height: 100%;
   overflow-x: hidden;
 }
+.filters {
+  display: block;
+  color: black;
+  padding-top: 20px;
+}
