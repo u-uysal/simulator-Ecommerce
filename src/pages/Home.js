@@ -5,6 +5,7 @@ import Info from "../components/Data";
 import RadioTeam from "../components/RadioTeam";
 import RadioColor from "../components/RadioColor";
 import RadioCity from "../components/RadioCity";
+import RadioGender from "../components/RadioGender";
 
 export default function Home() {
   const [state, setState] = useState({
@@ -117,10 +118,20 @@ export default function Home() {
           aria-expanded="false"
           aria-controls="collapseFour"
         >
-          Link with href <i class="fas fa-arrow-circle-down ml-2"></i>
+          Gender <i class="fas fa-arrow-circle-down ml-2"></i>
         </a>
         <div class="collapse" id="collapseFour">
-          <div class="card card-body">asdasdsadasdsad</div>
+          <div class="card card-body">
+            {" "}
+            {uniqueGender.map((key, i) => (
+              <RadioGender
+                key={i}
+                value={key}
+                checked={state.gender === key}
+                onChange={handleChange}
+              />
+            ))}
+          </div>
         </div>
         <hr></hr>
       </div>
