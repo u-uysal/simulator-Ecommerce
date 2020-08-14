@@ -19,3 +19,38 @@
   background-repeat: no-repeat;
   background-size: cover;
 }
+.gallery {
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: 10vw;
+}
+
+.image-display {
+  width: 20vw;
+  height: 23vw;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+.image-info {
+  width: 20vw;
+  height: 9vw;
+  text-align: center;
+}
+
+.text-old {
+  text-decoration: line-through;
+  font-weight: 400;
+  font-size: 1vw;
+  padding: 1vw 0.5vw;
+}
+.text-new {
+  font-weight: bold;
+  margin-right: 2vw;
+  font-size: 2vw;
+  margin-right: auto;
+  padding: 1vw 0.5vw;
+}
+.img-part {
+  margin: 0 3vw 3vw 0;
+}

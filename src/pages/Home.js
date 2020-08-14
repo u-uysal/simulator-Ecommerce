@@ -2,6 +2,14 @@ import React, { useState } from "react";
 import "bootstrap/dist/css/bootstrap.css";
 import Info from "../components/Data";
 
+import image0 from "../assets/image0.jpg";
+import image1 from "../assets/image1.jpg";
+import image2 from "../assets/image2.jpeg";
+import image3 from "../assets/image3.jpg";
+import image4 from "../assets/image4.jpg";
+import image5 from "../assets/image5.jpg";
+import image6 from "../assets/image6.jpg";
+
 import RadioTeam from "../components/RadioTeam";
 import RadioColor from "../components/RadioColor";
 import RadioCity from "../components/RadioCity";
@@ -14,6 +22,9 @@ export default function Home() {
     city: "",
     gender: "",
   });
+
+  // find filtered array according to user wishes
+
   let filterArray = Info.filter(
     (item) =>
       (state.team === "" || item.team === state.team) &&
@@ -22,14 +33,17 @@ export default function Home() {
       (state.gender === "" || item.gender === state.gender)
   );
 
-  let displayArray = filterArray.map((item) => item.id);
+  // define image array to easily mapping data
+  const img = [image0, image1, image2, image3, image4, image5, image6];
 
+  // function find unique value
   const FindUnique = (Info, i) => {
     let itemArray = Info.map((item) => item[i]);
     let UniqueArray = [...new Set(itemArray)];
     return UniqueArray;
   };
 
+  // find unique value to find unique value
   const uniqueTeam = FindUnique(Info, "team");
   const uniqueColor = FindUnique(Info, "color");
   const uniqueCity = FindUnique(Info, "city");
@@ -52,10 +66,10 @@ export default function Home() {
           aria-expanded="false"
           aria-controls="collapseOne"
         >
-          Team <i class="fas fa-arrow-circle-down ml-2"></i>
+          Team <i className="fas fa-arrow-circle-down ml-2"></i>
         </a>
-        <div class="collapse" id="collapseOne">
-          <div class="card card-body">
+        <div className="collapse" id="collapseOne">
+          <div className="card card-body">
             {" "}
             {uniqueTeam.map((key, i) => (
               <RadioTeam
@@ -75,10 +89,10 @@ export default function Home() {
           aria-expanded="false"
           aria-controls="collapseTwo"
         >
-          Color <i class="fas fa-arrow-circle-down ml-2"></i>
+          Color <i className="fas fa-arrow-circle-down ml-2"></i>
         </a>
-        <div class="collapse" id="collapseTwo">
-          <div class="card card-body">
+        <div className="collapse" id="collapseTwo">
+          <div className="card card-body">
             {uniqueColor.map((key, i) => (
               <RadioColor
                 key={i}
@@ -97,10 +111,10 @@ export default function Home() {
           aria-expanded="false"
           aria-controls="collapseThree"
         >
-          City <i class="fas fa-arrow-circle-down ml-2"></i>
+          City <i className="fas fa-arrow-circle-down ml-2"></i>
         </a>
-        <div class="collapse" id="collapseThree">
-          <div class="card card-body">
+        <div className="collapse" id="collapseThree">
+          <div className="card card-body">
             {uniqueCity.map((key, i) => (
               <RadioCity
                 key={i}
@@ -119,10 +133,10 @@ export default function Home() {
           aria-expanded="false"
           aria-controls="collapseFour"
         >
-          Gender <i class="fas fa-arrow-circle-down ml-2"></i>
+          Gender <i className="fas fa-arrow-circle-down ml-2"></i>
         </a>
-        <div class="collapse" id="collapseFour">
-          <div class="card card-body">
+        <div className="collapse" id="collapseFour">
+          <div className="card card-body">
             {" "}
             {uniqueGender.map((key, i) => (
               <RadioGender
@@ -142,8 +156,8 @@ export default function Home() {
 
       <div className="col-sm-9 text-center">
         <div className="intro">
-          <div class="row">
-            <div class="col-sm-4">
+          <div className="row">
+            <div className="col-sm-4">
               <h3 className="font-weight-bold">Laminaat</h3>
               <p className="text-left">
                 Creëer eenvoudig een natuurlijke sfeer in huis met een laminaat
@@ -165,11 +179,28 @@ export default function Home() {
                 <li>Gemakkelijk te onderhouden</li>
               </ul>
             </div>
-            <div class="col-sm-7 ml-5 main-image"></div>
+            <div className="col-sm-7 ml-5 main-image"></div>
             {/* intro section ended */}
 
             {/* gallery section is starting */}
-            <div className="gallery"></div>
+            <div className="gallery">
+              {filterArray.map((item, i) => (
+                <div key={i} className="img-part">
+                  <div
+                    style={{ backgroundImage: `url(${img[item.id]})` }}
+                    className="image-display"
+                  ></div>
+                  <div className="image-info">
+                    <p className="text-uppercase">{item.merken}</p>
+                    <span className="text-old">{item.old} &#13217;</span>
+                    <span className="text-new">{item.new} &#13217;</span>
+                    <button type="button" className="btn btn-primary">
+                      Meer informatie
+                    </button>
+                  </div>
+                </div>
+              ))}
+            </div>
           </div>
         </div>
       </div>
