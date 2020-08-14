@@ -43,6 +43,7 @@ export default function Home() {
   };
   return (
     <div className="row">
+      {/* sidebar is starting */}
       <div className="col-sm-3 text-center sidebar">
         <a
           className="filters"
@@ -135,7 +136,43 @@ export default function Home() {
         </div>
         <hr></hr>
       </div>
-      <div className="col-sm-9 text-center">Content</div>
+      {/* sidebar  ended */}
+
+      {/* intro section is starting */}
+
+      <div className="col-sm-9 text-center">
+        <div className="intro">
+          <div class="row">
+            <div class="col-sm-4">
+              <h3 className="font-weight-bold">Laminaat</h3>
+              <p className="text-left">
+                Creëer eenvoudig een natuurlijke sfeer in huis met een laminaat
+                vloer met houtmotief of steenmotief. Je hebt de keuze uit een
+                ruim assortiment. Zo zijn er laminaatvloeren met houtmotief en
+                een voelbare houtstructuur, maar ook dessins met zeer glad
+                leisteen. Deze laminaatvloeren zijn nauwelijks van echt hout of
+                steen te onderscheiden.
+              </p>
+              <h5 className="text-left font-weight-bold">
+                Het gemak van laminaat
+              </h5>
+              <ul className="text-left">
+                <li>
+                  Keuze uit heel veel verschillende houtdessins en steendessins
+                </li>
+                <li>Creëer een natuurlijke sfeer</li>
+                <li>Eenvoudig te plaatsen</li>
+                <li>Gemakkelijk te onderhouden</li>
+              </ul>
+            </div>
+            <div class="col-sm-7 ml-5 main-image"></div>
+            {/* intro section ended */}
+
+            {/* gallery section is starting */}
+            <div className="gallery"></div>
+          </div>
+        </div>
+      </div>
     </div>
   );
 }
