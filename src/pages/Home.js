@@ -23,9 +23,13 @@ export default function Home() {
     gender: "",
   });
 
+  // find non-empty array to display certain value
+
+  let noEmptyData = Info.filter((item) => item.old !== undefined);
+
   // find filtered array according to user wishes
 
-  let filterArray = Info.filter(
+  let filterArray = noEmptyData.filter(
     (item) =>
       (state.team === "" || item.team === state.team) &&
       (state.color === "" || item.color === state.color) &&

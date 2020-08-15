@@ -4,7 +4,7 @@
   font-size: 1vw;
 }
 .sidebar {
-  border-right: 3px solid red;
+  border-right: 3px solid darkgray;
   height: 100%;
   overflow-x: hidden;
 }
@@ -53,4 +53,8 @@
 }
 .img-part {
   margin: 0 3vw 3vw 0;
+}
+label {
+  text-align: start;
+  padding-left: 30%;
 }
