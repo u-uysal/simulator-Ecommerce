@@ -10,7 +10,7 @@ export default function RadioTeam(props) {
         checked={props.checked}
         onChange={props.onChange}
       />{" "}
-      {props.value}
+      {props.value ? props.value : "Default"}
     </label>
   );
 }

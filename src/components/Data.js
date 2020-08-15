@@ -69,5 +69,12 @@ const Info = [
     old: 22.99,
     new: 15.49,
   },
+  {
+    id: 7,
+    color: "",
+    team: "",
+    city: "",
+    gender: "",
+  },
 ];
 export default Info;
