@@ -9,6 +9,7 @@ import image3 from "../assets/image3.jpg";
 import image4 from "../assets/image4.jpg";
 import image5 from "../assets/image5.jpg";
 import image6 from "../assets/image6.jpg";
+import gif from "../assets/tenor.gif";
 
 import RadioTeam from "../components/RadioTeam";
 import RadioColor from "../components/RadioColor";
@@ -193,22 +194,42 @@ export default function Home() {
 
               {/* gallery section is starting */}
               <div className="gallery">
-                {filterArray.map((item, i) => (
-                  <div key={i} className="img-part">
-                    <div
-                      style={{ backgroundImage: `url(${img[item.id]})` }}
-                      className="image-display"
-                    ></div>
-                    <div className="image-info">
-                      <p className="text-uppercase">{item.merken}</p>
-                      <span className="text-old">{item.old} &#13217;</span>
-                      <span className="text-new">{item.new} &#13217;</span>
-                      <button type="button" className="btn btn-primary">
-                        Meer informatie
-                      </button>
-                    </div>
+                {filterArray.length === 0 ? (
+                  <div>
+                    <img
+                      class="img-fluid rounded"
+                      style={{ width: "50vw", height: "40vw" }}
+                      src={gif}
+                      alt="Chania"
+                    />
+                    <h3 className="no-match">
+                      No matching items were found according to your search
+                      criteria.
+                    </h3>
                   </div>
-                ))}
+                ) : (
+                  filterArray.map((item, i) => (
+                    <div key={i} className="img-part">
+                      <div
+                        style={{ backgroundImage: `url(${img[item.id]})` }}
+                        className="image-display"
+                      ></div>
+                      <div className="image-info">
+                        <p className="text-uppercase">{item.merken}</p>
+                        <div>
+                          <span className="text-old">{item.old} &#13217;</span>
+                          <span className="text-new">{item.new} &#13217;</span>
+                        </div>
+                        <button
+                          type="button"
+                          className="btn btn-primary btn-sm mt-3 "
+                        >
+                          Meer informatie
+                        </button>
+                      </div>
+                    </div>
+                  ))
+                )}
               </div>
             </div>
           </div>
