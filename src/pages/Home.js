@@ -211,31 +211,28 @@ export default function Home() {
                   </div>
                 ) : (
                   filterArray.map((item, i) => (
-                    <Link to={`/${item.id}`}>
-                      <div key={i} className="img-part">
-                        <div
-                          style={{ backgroundImage: `url(${img[item.id]})` }}
-                          className="image-display"
-                        ></div>
-                        <div className="image-info">
-                          <p className="text-uppercase">{item.merken}</p>
-                          <div>
-                            <span className="text-old">
-                              {item.old} &#13217;
-                            </span>
-                            <span className="text-new">
-                              {item.new} &#13217;
-                            </span>
-                          </div>
+                    <div key={i} className="img-part">
+                      <div
+                        style={{ backgroundImage: `url(${img[item.id]})` }}
+                        className="image-display"
+                      ></div>
+
+                      <div className="image-info">
+                        <p className="text-uppercase">{item.merken}</p>
+                        <div>
+                          <span className="text-old">{item.old} &#13217;</span>
+                          <span className="text-new">{item.new} &#13217;</span>
+                        </div>
+                        <Link to={`/${item.id}`}>
                           <button
                             type="button"
                             className="btn btn-primary btn-sm mt-3 "
                           >
                             Meer informatie
-                          </button>
-                        </div>
+                          </button>{" "}
+                        </Link>
                       </div>
-                    </Link>
+                    </div>
                   ))
                 )}
               </div>
