@@ -2,6 +2,8 @@ import React, { useState } from "react";
 import "bootstrap/dist/css/bootstrap.css";
 import Info from "../components/Data";
 
+import { Link } from "react-router-dom";
+
 import image0 from "../assets/image0.jpg";
 import image1 from "../assets/image1.jpg";
 import image2 from "../assets/image2.jpeg";
@@ -209,25 +211,31 @@ export default function Home() {
                   </div>
                 ) : (
                   filterArray.map((item, i) => (
-                    <div key={i} className="img-part">
-                      <div
-                        style={{ backgroundImage: `url(${img[item.id]})` }}
-                        className="image-display"
-                      ></div>
-                      <div className="image-info">
-                        <p className="text-uppercase">{item.merken}</p>
-                        <div>
-                          <span className="text-old">{item.old} &#13217;</span>
-                          <span className="text-new">{item.new} &#13217;</span>
+                    <Link to={`/${item.id}`}>
+                      <div key={i} className="img-part">
+                        <div
+                          style={{ backgroundImage: `url(${img[item.id]})` }}
+                          className="image-display"
+                        ></div>
+                        <div className="image-info">
+                          <p className="text-uppercase">{item.merken}</p>
+                          <div>
+                            <span className="text-old">
+                              {item.old} &#13217;
+                            </span>
+                            <span className="text-new">
+                              {item.new} &#13217;
+                            </span>
+                          </div>
+                          <button
+                            type="button"
+                            className="btn btn-primary btn-sm mt-3 "
+                          >
+                            Meer informatie
+                          </button>
                         </div>
-                        <button
-                          type="button"
-                          className="btn btn-primary btn-sm mt-3 "
-                        >
-                          Meer informatie
-                        </button>
                       </div>
-                    </div>
+                    </Link>
                   ))
                 )}
               </div>

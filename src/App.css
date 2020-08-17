@@ -62,3 +62,41 @@ label {
   text-decoration: underline;
   margin-left: 3vw;
 }
+.single-page {
+  max-width: 80vw;
+  margin: 30px auto;
+  border: 1px solid red;
+}
+.image-container {
+  display: flex;
+  flex-wrap: wrap;
+}
+.single-image {
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  width: 45vw;
+  height: 42vw;
+}
+.single-image-info {
+  width: 30vw;
+  height: 35vw;
+  border: 1px solid fuchsia;
+  margin: 3vw 0 0 3vw;
+}
+.single-image-header {
+  color: rgb(70, 68, 74);
+  font-size: 4vw;
+  font-weight: 700;
+}
+.single-image-old {
+  font-size: 3vw;
+  font-weight: 200;
+  color: rgb(70, 68, 74);
+  text-decoration: line-through;
+}
+.single-image-new {
+  font-size: 4vw;
+  font-weight: bold;
+  color: rgb(70, 68, 74);
+}
