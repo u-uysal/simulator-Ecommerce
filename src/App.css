@@ -1,7 +1,6 @@
 * {
   box-sizing: border-box;
   font-family: "Poppins", sans-serif;
-  font-size: calc(0.4vw + 8px);
 }
 .sidebar {
   border-right: 3px solid darkgray;
@@ -63,31 +62,24 @@ label {
   margin-left: 3vw;
 }
 .single-page {
-  max-width: 80vw;
+  min-width: 250px;
+  max-width: 1250px;
+  width: 80vw;
   margin: 30px auto;
-  border: 1px solid red;
 }
-.image-container {
-  display: flex;
-  flex-wrap: wrap;
-}
+
 .single-image {
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
-  width: 45vw;
   height: 42vw;
 }
 .single-image-info {
-  width: 30vw;
-  height: 35vw;
-  border: 1px solid fuchsia;
-  margin: 3vw 0 0 3vw;
+  margin: 4vw 0 0 1vw;
 }
-.single-image-header {
-  color: rgb(70, 68, 74);
-  font-size: 4vw;
-  font-weight: 700;
+.merk-name {
+  font-size: calc(16px + 2vw);
+  font-weight: bold;
 }
 .single-image-old {
   font-size: 3vw;
@@ -99,4 +91,23 @@ label {
   font-size: 4vw;
   font-weight: bold;
   color: rgb(70, 68, 74);
+}
+.text-info-old {
+  font-size: calc(12px + 1vw);
+  text-decoration: line-through;
+  font-weight: 200;
+}
+.text-info-new {
+  font-size: calc(21px + 1vw);
+  font-weight: bold;
+  margin-left: 1vw;
+}
+.text-exp {
+  margin-top: 5vh;
+}
+.sell-button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 10vh;
 }
