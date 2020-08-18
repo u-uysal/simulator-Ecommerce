@@ -64,12 +64,9 @@ export default function Home() {
   };
   return (
     <>
-      <div className="row">
+      <div className="container-header ">
         {/* sidebar is starting */}
-        <div
-          className="col-sm-3 text-center sidebar sticky-top"
-          id="sticky-sidebar"
-        >
+        <div className="sidebar">
           <a
             className="filters"
             data-toggle="collapse"
@@ -165,78 +162,79 @@ export default function Home() {
 
         {/* intro section is starting */}
 
-        <div className="col-sm-9 text-center">
-          <div className="intro">
-            <div className="row">
-              <div className="col-sm-4">
-                <h3 className="font-weight-bold">Laminaat</h3>
-                <p className="text-left">
-                  Creëer eenvoudig een natuurlijke sfeer in huis met een
-                  laminaat vloer met houtmotief of steenmotief. Je hebt de keuze
-                  uit een ruim assortiment. Zo zijn er laminaatvloeren met
-                  houtmotief en een voelbare houtstructuur, maar ook dessins met
-                  zeer glad leisteen. Deze laminaatvloeren zijn nauwelijks van
-                  echt hout of steen te onderscheiden.
-                </p>
-                <h5 className="text-left font-weight-bold">
-                  Het gemak van laminaat
-                </h5>
-                <ul className="text-left">
-                  <li>
-                    Keuze uit heel veel verschillende houtdessins en
-                    steendessins
-                  </li>
-                  <li>Creëer een natuurlijke sfeer</li>
-                  <li>Eenvoudig te plaatsen</li>
-                  <li>Gemakkelijk te onderhouden</li>
-                </ul>
-              </div>
-              <div className="col-sm-7 ml-5 main-image"></div>
-              {/* intro section ended */}
-
-              {/* gallery section is starting */}
-              <div className="gallery">
-                {filterArray.length === 0 ? (
-                  <div>
-                    <img
-                      class="img-fluid rounded"
-                      style={{ width: "50vw", height: "40vw" }}
-                      src={gif}
-                      alt="Chania"
-                    />
-                    <h3 className="no-match">
-                      No matching items were found according to your search
-                      criteria.
-                    </h3>
-                  </div>
-                ) : (
-                  filterArray.map((item, i) => (
-                    <div key={i} className="img-part">
-                      <div
-                        style={{ backgroundImage: `url(${img[item.id]})` }}
-                        className="image-display"
-                      ></div>
-
-                      <div className="image-info">
-                        <p className="text-uppercase">{item.merken}</p>
-                        <div>
-                          <span className="text-old">{item.old} &#13217;</span>
-                          <span className="text-new">{item.new} &#13217;</span>
-                        </div>
-                        <Link to={`/${item.id}`}>
-                          <button
-                            type="button"
-                            className="btn btn-primary btn-sm mt-3 "
-                          >
-                            Meer informatie
-                          </button>{" "}
-                        </Link>
-                      </div>
-                    </div>
-                  ))
-                )}
-              </div>
+        <div className="bg-info content-sec">
+          <div className="flex-container">
+            <div className="text-content">
+              <h3 className="font-weight-bold">Laminaat</h3>
+              <p className="text-left">
+                Creëer eenvoudig een natuurlijke sfeer in huis met een laminaat
+                vloer met houtmotief of steenmotief. Je hebt de keuze uit een
+                ruim assortiment. Zo zijn er laminaatvloeren met houtmotief en
+                een voelbare houtstructuur, maar ook dessins met zeer glad
+                leisteen. Deze laminaatvloeren zijn nauwelijks van echt hout of
+                steen te onderscheiden.
+              </p>
+              <h5 className="text-left font-weight-bold">
+                Het gemak van laminaat
+              </h5>
+              <ul className="text-left">
+                <li>
+                  Keuze uit heel veel verschillende houtdessins en steendessins
+                </li>
+                <li>Creëer een natuurlijke sfeer</li>
+                <li>Eenvoudig te plaatsen</li>
+                <li>Gemakkelijk te onderhouden</li>
+              </ul>
             </div>
+            <div className="main-image"></div>
+          </div>
+          {/* intro section ended */}
+
+          {/* gallery section is starting */}
+          <div className="gallery">
+            {filterArray.length === 0 ? (
+              <div>
+                <img
+                  class="img-fluid rounded"
+                  style={{ width: "50vw", height: "40vw" }}
+                  src={gif}
+                  alt="Chania"
+                />
+                <h3 className="no-match">
+                  No matching items were found according to your search
+                  criteria.
+                </h3>
+              </div>
+            ) : (
+              filterArray.map((item, i) => (
+                <div className="img-part">
+                  <div key={i}>
+                    <img
+                      src={img[item.id]}
+                      alt={item.merken}
+                      style={{ width: "300px", height: "300px" }}
+                    />
+                    <p className="text-uppercase text-center mt-4">
+                      {item.merken}
+                    </p>
+
+                    <div className="d-flex price">
+                      <span className="text-new">{item.new} &#13217;</span>
+                    </div>
+                    <div className="text-center mb-2">
+                      <Link to={`/${item.id}`}>
+                        <button
+                          type="button"
+                          className="btn btn-primary btn-sm mt-3 "
+                        >
+                          Meer informatie
+                        </button>{" "}
+                      </Link>
+                    </div>
+                  </div>
+                </div>
+              ))
+            )}
           </div>
         </div>
       </div>
