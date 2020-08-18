@@ -76,7 +76,7 @@ export default function Home() {
           >
             Team <i className="fas fa-arrow-circle-down ml-2"></i>
           </a>
-          <div className="collapse" id="collapseOne">
+          <div className="collapse " id="collapseOne">
             <div className="card card-body">
               {" "}
               {uniqueTeam.map((key, i) => (
@@ -99,7 +99,7 @@ export default function Home() {
           >
             Color <i className="fas fa-arrow-circle-down ml-2"></i>
           </a>
-          <div className="collapse" id="collapseTwo">
+          <div className="collapse " id="collapseTwo">
             <div className="card card-body">
               {uniqueColor.map((key, i) => (
                 <RadioColor
@@ -121,7 +121,7 @@ export default function Home() {
           >
             City <i className="fas fa-arrow-circle-down ml-2"></i>
           </a>
-          <div className="collapse" id="collapseThree">
+          <div className="collapse " id="collapseThree">
             <div className="card card-body">
               {uniqueCity.map((key, i) => (
                 <RadioCity
