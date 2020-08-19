@@ -25,6 +25,10 @@ export default function Home() {
     city: "",
     gender: "",
   });
+  const [sort, setSort] = useState([]);
+  const handlePriceChange = (event) => {
+    setSort(event.target.value);
+  };
 
   // find non-empty array to display certain value
 
@@ -62,6 +66,25 @@ export default function Home() {
       return { ...prevState, [name]: value };
     });
   };
+
+  // copy filter element to prevent change all array
+
+  // sort by price
+
+  let highestArray = [...filterArray].sort(
+    (a, b) => parseFloat(b.new) - parseFloat(a.new)
+  );
+  let lowestArray = [...highestArray].reverse();
+
+  let displayArray =
+    sort.length === 0
+      ? filterArray
+      : sort == "lowest"
+      ? lowestArray
+      : sort == "highest"
+      ? highestArray
+      : "";
+
   return (
     <>
       <div className="container-header ">
@@ -188,10 +211,16 @@ export default function Home() {
             <div className="main-image"></div>
           </div>
           {/* intro section ended */}
-
+          <form className="form-info">
+            <select value={sort} onChange={handlePriceChange}>
+              <option value="">Sort By Price</option>
+              <option value="lowest">Lowest Price</option>
+              <option value="highest">Highest Price</option>
+            </select>
+          </form>
           {/* gallery section is starting */}
           <div className="gallery">
-            {filterArray.length === 0 ? (
+            {displayArray.length === 0 ? (
               <div>
                 <img
                   class="img-fluid rounded"
@@ -205,9 +234,9 @@ export default function Home() {
                 </h3>
               </div>
             ) : (
-              filterArray.map((item, i) => (
-                <div className="img-part">
-                  <div key={i}>
+              displayArray.map((item, i) => (
+                <div key={i} className="img-part">
+                  <div>
                     <img
                       src={img[item.id]}
                       alt={item.merken}

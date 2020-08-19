@@ -42,11 +42,15 @@
   width: 40vw;
   height: 35vw;
 }
-
+form {
+  display: flex;
+  justify-content: center;
+  margin-top: 5vw;
+}
 .gallery {
   display: flex;
   flex-wrap: wrap;
-  margin-top: 10vw;
+  margin-top: 5vw;
   justify-content: space-around;
 }
 .img-part {

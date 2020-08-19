@@ -7,7 +7,7 @@ const Info = [
     gender: "Male",
     merken: "merken1",
     old: 22.99,
-    new: 15.49,
+    new: 23.49,
   },
   {
     id: 1,
@@ -17,7 +17,7 @@ const Info = [
     gender: "Female",
     merken: "merken2",
     old: 22.99,
-    new: 15.49,
+    new: 16.49,
   },
   {
     id: 2,
@@ -27,7 +27,7 @@ const Info = [
     gender: "Male",
     merken: "merken3",
     old: 22.99,
-    new: 15.49,
+    new: 25.49,
   },
   {
     id: 3,
@@ -37,7 +37,7 @@ const Info = [
     gender: "Male",
     merken: "merken4",
     old: 22.99,
-    new: 15.49,
+    new: 18.49,
   },
   {
     id: 4,
@@ -47,7 +47,7 @@ const Info = [
     gender: "Female",
     merken: "merken5",
     old: 22.99,
-    new: 15.49,
+    new: 19.49,
   },
   {
     id: 5,
@@ -57,7 +57,7 @@ const Info = [
     gender: "Male",
     merken: "merken6",
     old: 22.99,
-    new: 15.49,
+    new: 20.49,
   },
   {
     id: 6,
@@ -67,7 +67,7 @@ const Info = [
     gender: "Male",
     merken: "merken7",
     old: 22.99,
-    new: 15.49,
+    new: 21.49,
   },
   {
     id: 7,
