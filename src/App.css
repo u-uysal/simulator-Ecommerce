@@ -4,7 +4,6 @@
   font-size: 15px;
 }
 .sidebar {
-  border: 3px solid darkgray;
   position: fixed;
   z-index: 1;
   top: 60px;
@@ -17,8 +16,8 @@
 }
 .filters {
   color: black;
-  padding-top: 20px;
-  background-color: sienna;
+  padding: 20px 0 20px 0;
+  border-bottom: 1px solid gray;
 }
 
 .content-sec {
@@ -27,7 +26,6 @@
 .flex-container {
   display: flex;
   flex-wrap: wrap;
-  background-color: DodgerBlue;
   justify-content: space-around;
 }
 .text-content {
@@ -64,17 +62,15 @@
 @media screen and (max-width: 792px) {
   .sidebar {
     display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: space-between;
+    justify-content: center;
     width: 100%;
     position: unset;
   }
   .filters {
-    padding: 20px;
-    background-color: sienna;
-    margin: 15px;
-    width: 150px;
+    padding: 10px;
+
+    width: 100%;
+    text-align: center;
   }
   .content-sec {
     margin-left: 1vw;
@@ -84,6 +80,9 @@
   }
   .text-content {
     width: 100%;
+  }
+  label {
+    margin-left: 40%;
   }
 }
 /* 

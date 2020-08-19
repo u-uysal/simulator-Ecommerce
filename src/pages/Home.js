@@ -89,7 +89,7 @@ export default function Home() {
               ))}
             </div>
           </div>
-          <hr></hr>
+
           <a
             className="filters"
             data-toggle="collapse"
@@ -111,7 +111,7 @@ export default function Home() {
               ))}
             </div>
           </div>
-          <hr></hr>
+
           <a
             className="filters"
             data-toggle="collapse"
@@ -133,7 +133,7 @@ export default function Home() {
               ))}
             </div>
           </div>
-          <hr></hr>
+
           <a
             className="filters"
             data-toggle="collapse"
@@ -143,7 +143,7 @@ export default function Home() {
           >
             Gender <i className="fas fa-arrow-circle-down ml-2"></i>
           </a>
-          <div className="collapse" id="collapseFour">
+          <div className="collapse " id="collapseFour">
             <div className="card card-body">
               {" "}
               {uniqueGender.map((key, i) => (
@@ -156,13 +156,12 @@ export default function Home() {
               ))}
             </div>
           </div>
-          <hr></hr>
         </div>
         {/* sidebar  ended */}
 
         {/* intro section is starting */}
 
-        <div className="bg-info content-sec">
+        <div className="content-sec">
           <div className="flex-container">
             <div className="text-content">
               <h3 className="font-weight-bold">Laminaat</h3>
