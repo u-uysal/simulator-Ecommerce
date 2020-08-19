@@ -2,6 +2,7 @@ const Info = [
   {
     id: 0,
     color: "Red",
+    src: "/images/image0.jpg",
     team: "Rm",
     city: "London",
     gender: "Male",
@@ -12,6 +13,7 @@ const Info = [
   {
     id: 1,
     color: "Red",
+    src: "/images/image1.jpg",
     team: "Barca",
     city: "London",
     gender: "Female",
@@ -22,6 +24,7 @@ const Info = [
   {
     id: 2,
     color: "Blue",
+    src: "/images/image2.jpeg",
     team: "Barca",
     city: "Liverpool",
     gender: "Male",
@@ -32,6 +35,7 @@ const Info = [
   {
     id: 3,
     color: "Blue",
+    src: "/images/image3.jpg",
     team: "Rm",
     city: "Manchester",
     gender: "Male",
@@ -42,6 +46,7 @@ const Info = [
   {
     id: 4,
     color: "Yellow",
+    src: "/images/image4.jpg",
     team: "Rm",
     city: "Manchester",
     gender: "Female",
@@ -52,6 +57,7 @@ const Info = [
   {
     id: 5,
     color: "Blue",
+    src: "/images/image5.jpg",
     team: "Barca",
     city: "Manchester",
     gender: "Male",
@@ -62,6 +68,7 @@ const Info = [
   {
     id: 6,
     color: "Blue",
+    src: "/images/image6.jpg",
     team: "Rm",
     city: "London",
     gender: "Male",

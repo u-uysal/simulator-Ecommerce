@@ -2,31 +2,18 @@ import React from "react";
 
 import Info from "../components/Data";
 
-import image0 from "../assets/image0.jpg";
-import image1 from "../assets/image1.jpg";
-import image2 from "../assets/image2.jpeg";
-import image3 from "../assets/image3.jpg";
-import image4 from "../assets/image4.jpg";
-import image5 from "../assets/image5.jpg";
-import image6 from "../assets/image6.jpg";
-
 export default function SingleP({ match }) {
-  // define image array to easily mapping data
-  const img = [image0, image1, image2, image3, image4, image5, image6];
-  console.log(match.params.slug);
-
   const specificItem = Info.filter((item) => item.id == match.params.slug);
-  console.log(specificItem[0].old);
+
   return (
     <div className="single-page">
       <div>
         <div class="row">
           <div class="col-md-7 ">
             {" "}
-            <div
-              className="single-image"
-              style={{ backgroundImage: `url(${img[match.params.slug]})` }}
-            ></div>
+            <div className="single-image">
+              <img src={specificItem[0].src} />
+            </div>
           </div>
           <div class="col-md-5">
             <div className="single-image-info">

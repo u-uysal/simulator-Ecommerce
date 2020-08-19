@@ -4,15 +4,6 @@ import Info from "../components/Data";
 
 import { Link } from "react-router-dom";
 
-import image0 from "../assets/image0.jpg";
-import image1 from "../assets/image1.jpg";
-import image2 from "../assets/image2.jpeg";
-import image3 from "../assets/image3.jpg";
-import image4 from "../assets/image4.jpg";
-import image5 from "../assets/image5.jpg";
-import image6 from "../assets/image6.jpg";
-import gif from "../assets/tenor.gif";
-
 import RadioTeam from "../components/RadioTeam";
 import RadioColor from "../components/RadioColor";
 import RadioCity from "../components/RadioCity";
@@ -45,7 +36,7 @@ export default function Home() {
   );
 
   // define image array to easily mapping data
-  const img = [image0, image1, image2, image3, image4, image5, image6];
+  /* const img = [image0, image1, image2, image3, image4, image5, image6]; */
 
   // function find unique value
   const FindUnique = (Info, i) => {
@@ -225,7 +216,7 @@ export default function Home() {
                 <img
                   class="img-fluid rounded"
                   style={{ width: "50vw", height: "40vw" }}
-                  src={gif}
+                  src="/images/tenor.gif"
                   alt="Chania"
                 />
                 <h3 className="no-match">
@@ -238,7 +229,7 @@ export default function Home() {
                 <div key={i} className="img-part">
                   <div>
                     <img
-                      src={img[item.id]}
+                      src={item.src}
                       alt={item.merken}
                       style={{ width: "300px", height: "300px" }}
                     />
