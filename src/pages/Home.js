@@ -17,6 +17,7 @@ export default function Home() {
     gender: "",
   });
   const [sort, setSort] = useState([]);
+  const [query, setQuery] = useState("");
   const handlePriceChange = (event) => {
     setSort(event.target.value);
   };
@@ -51,8 +52,13 @@ export default function Home() {
   const uniqueCity = FindUnique(Info, "city");
   const uniqueGender = FindUnique(Info, "gender");
 
+  const queryHandler = (e) => {
+    setQuery(e.target.value);
+  };
+
   const handleChange = (event) => {
     const { name, value } = event.target;
+    setQuery();
     setState((prevState) => {
       return { ...prevState, [name]: value };
     });
@@ -76,6 +82,11 @@ export default function Home() {
       ? highestArray
       : "";
 
+  // filter image based on search filter
+
+  /*  let displayArray = arrayOfOption.filter((item) => {
+    return item.merken.toLowerCase().indexOf(query.toLowerCase()) !== -1;
+  }); */
   return (
     <>
       <div className="container-header ">
@@ -202,13 +213,37 @@ export default function Home() {
             <div className="main-image"></div>
           </div>
           {/* intro section ended */}
-          <form className="form-info">
-            <select value={sort} onChange={handlePriceChange}>
-              <option value="">Sort By Price</option>
-              <option value="lowest">Lowest Price</option>
-              <option value="highest">Highest Price</option>
-            </select>
-          </form>
+          <div className="form-area">
+            <div class="row">
+              <div class="col-sm-6">
+                {" "}
+                <div class="form-group">
+                  <select
+                    class="form-control"
+                    value={sort}
+                    onChange={handlePriceChange}
+                  >
+                    <option value="">Sort By Price</option>
+                    <option value="lowest">Lowest Price</option>
+                    <option value="highest">Highest Price</option>
+                  </select>
+                </div>
+              </div>
+              <div class="col-sm-6">
+                <div class="form-group">
+                  <input
+                    type="text"
+                    value={query}
+                    name="search"
+                    class="form-control"
+                    onChange={queryHandler}
+                    placeholder="Search your desire product here"
+                  />
+                </div>
+              </div>
+            </div>
+          </div>
+
           {/* gallery section is starting */}
           <div className="gallery">
             {displayArray.length === 0 ? (

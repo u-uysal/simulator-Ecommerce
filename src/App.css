@@ -3,11 +3,19 @@
   font-family: "Poppins", sans-serif;
   font-size: 15px;
 }
+nav {
+  background-color: orange;
+  height: 150px;
+}
+nav li a {
+  color: white;
+  font-weight: bold;
+}
 .sidebar {
   position: fixed;
   z-index: 1;
-  top: 60px;
-  left: 10px;
+  top: 150px;
+  left: 1vw;
   overflow-x: hidden;
   min-width: 160px;
   width: 15vw;
@@ -33,7 +41,7 @@
   min-width: 300px;
 }
 .main-image {
-  background-image: url("../src/assets/main_image.png");
+  background-image: url("/images/main_image.png");
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -42,10 +50,11 @@
   width: 40vw;
   height: 35vw;
 }
-form {
-  display: flex;
-  justify-content: center;
-  margin-top: 5vw;
+.form-area {
+  background-color: orange;
+  width: 80%;
+  margin: 20px auto;
+  padding: 20px;
 }
 .gallery {
   display: flex;
@@ -62,8 +71,37 @@ form {
   font-weight: bold;
   font-size: 1.2rem;
 }
-
-@media screen and (max-width: 792px) {
+.single-page {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+.single-page img {
+  width: 40vw;
+  min-width: 350px;
+}
+.single-page-info {
+  border: 1px solid red;
+  width: 40vw;
+  min-width: 350px;
+}
+.image-merken {
+  font-weight: 700;
+  color: #46444a;
+  font-size: 35px !important;
+  padding-top: 10%;
+}
+.image-price {
+  border: 1px red solid;
+  font-size: 1.5rem;
+  font-weight: 700;
+}
+.product-order {
+  display: flex;
+  flex-direction: column;
+  margin-top: 20%;
+}
+@media screen and (max-width: 950px) {
   .sidebar {
     display: flex;
     justify-content: center;

@@ -7,78 +7,20 @@ export default function SingleP({ match }) {
 
   return (
     <div className="single-page">
-      <div>
-        <div class="row">
-          <div class="col-md-7 ">
-            {" "}
-            <div className="single-image">
-              <img src={specificItem[0].src} />
-            </div>
-          </div>
-          <div class="col-md-5">
-            <div className="single-image-info">
-              <div class="container">
-                <h2 className="merk-name">{specificItem[0].merken}</h2>
-                <br />
-
-                <ul class="nav nav-pills" role="tablist">
-                  <li class="nav-item">
-                    <a class="nav-link active" data-toggle="pill" href="#menu1">
-                      Productomschrijving
-                    </a>
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link" data-toggle="pill" href="#menu2">
-                      Specificaties
-                    </a>
-                  </li>
-                </ul>
-
-                <div class="tab-content">
-                  <div id="menu1" class="container tab-pane active">
-                    <br />
-                    <div className="mb-4">
-                      <span className="text-info-old">
-                        {specificItem[0].old}&#13217;
-                      </span>
-                      <span className="text-info-new">
-                        {specificItem[0].new}&#13217;
-                      </span>
-                    </div>
-                    <p className="text-exp">
-                      Ut enim ad minim veniam, quis nostrud exercitation ullamco
-                      laboris nisi ut aliquip ex ea commodo consequat.
-                    </p>
-                    <div className="sell-button">
-                      <button type="button" class="btn btn-secondary btn-lg">
-                        Bestel Productstalen
-                      </button>
-                    </div>
-                  </div>
-                  <div id="menu2" class="container tab-pane fade">
-                    <div class="container">
-                      <table class="table mt-5">
-                        <tbody>
-                          <tr>
-                            <td>John</td>
-                            <td>Doe</td>
-                          </tr>
-                          <tr>
-                            <td>Mary</td>
-                            <td>Moe</td>
-                          </tr>
-                          <tr>
-                            <td>July</td>
-                            <td>Dooley</td>
-                          </tr>
-                        </tbody>
-                      </table>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
+      <div className="single-page-img">
+        <img src={specificItem[0].src} />
+      </div>
+      <div className="single-page-info">
+        <p className="image-merken">{specificItem[0].merken}</p>
+        <p className="image-price">{specificItem[0].new}</p>
+        <div className="product-order">
+          <p>
+            First select a color (and possibly size) above to see if a product
+            sample is available.
+          </p>
+          <button type="button" class="btn btn-secondary p-3">
+            Order Product Sample
+          </button>
         </div>
       </div>
     </div>
