@@ -17,7 +17,7 @@ export default function Home() {
     gender: "",
   });
   const [sort, setSort] = useState([]);
-  const [query, setQuery] = useState("");
+  const [query, setQuery] = useState(null);
 
   const handlePriceChange = (event) => {
     setSort(event.target.value);
@@ -74,24 +74,21 @@ export default function Home() {
   );
   let lowestArray = [...highestArray].reverse();
 
-  let searchArry = [...filterArray].filter((item) => {
-    return item.merken.toLowerCase().indexOf(query.toLowerCase()) !== -1;
-  });
-
-  let displayArray =
+  let showArray =
     sort.length === 0
-      ? searchArry
+      ? filterArray
       : sort == "lowest"
       ? lowestArray
       : sort == "highest"
       ? highestArray
       : "";
 
-  console.log(displayArray);
-  /* let ar = displayArray.map((item) => item.merken.toUpperCase());
-  console.log(ar); */
-  // filter image based on search filter
-
+  let displayArray = showArray.filter((data) => {
+    if (query == null) return data;
+    else if (data.merken.includes(query.toLowerCase())) {
+      return data;
+    }
+  });
   return (
     <>
       <div className="container-header ">
