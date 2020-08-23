@@ -18,6 +18,7 @@ export default function Home() {
   });
   const [sort, setSort] = useState([]);
   const [query, setQuery] = useState("");
+
   const handlePriceChange = (event) => {
     setSort(event.target.value);
   };
@@ -73,20 +74,24 @@ export default function Home() {
   );
   let lowestArray = [...highestArray].reverse();
 
+  let searchArry = [...filterArray].filter((item) => {
+    return item.merken.toLowerCase().indexOf(query.toLowerCase()) !== -1;
+  });
+
   let displayArray =
     sort.length === 0
-      ? filterArray
+      ? searchArry
       : sort == "lowest"
       ? lowestArray
       : sort == "highest"
       ? highestArray
       : "";
 
+  console.log(displayArray);
+  /* let ar = displayArray.map((item) => item.merken.toUpperCase());
+  console.log(ar); */
   // filter image based on search filter
 
-  /*  let displayArray = arrayOfOption.filter((item) => {
-    return item.merken.toLowerCase().indexOf(query.toLowerCase()) !== -1;
-  }); */
   return (
     <>
       <div className="container-header ">
@@ -277,10 +282,7 @@ export default function Home() {
                     </div>
                     <div className="text-center mb-2">
                       <Link to={`/${item.id}`}>
-                        <button
-                          type="button"
-                          className="btn btn-primary btn-sm mt-3 "
-                        >
+                        <button type="button" className="button-meer mt-3 ">
                           Meer informatie
                         </button>{" "}
                       </Link>

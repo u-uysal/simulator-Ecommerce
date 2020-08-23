@@ -4,12 +4,19 @@
   font-size: 15px;
 }
 nav {
-  background-color: orange;
   height: 150px;
+  border-bottom: 2px solid gray;
 }
 nav li a {
-  color: white;
+  color: #f25d33;
   font-weight: bold;
+}
+.logo-img {
+  background-color: rebeccapurple;
+  position: absolute;
+  top: 10px;
+  left: 5vw;
+  width: 30vw;
 }
 .sidebar {
   position: fixed;
@@ -100,6 +107,14 @@ nav li a {
   display: flex;
   flex-direction: column;
   margin-top: 20%;
+}
+.button-meer {
+  background-color: #f25d33;
+  color: white;
+  border-radius: 10px;
+}
+.fas {
+  color: #f25d33;
 }
 @media screen and (max-width: 950px) {
   .sidebar {
